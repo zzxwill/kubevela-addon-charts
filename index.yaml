@@ -1,0 +1,238 @@
+apiVersion: v1
+entries:
+  grafana:
+  - apiVersion: v2
+    appVersion: 8.0.5
+    created: "2021-09-30T17:29:43.211752+08:00"
+    description: The leading tool for querying and visualizing time series and metrics.
+    digest: 3e6fed0682d3cc3690a6abc9e5a9f56c1ab703698b4d65b9441f75c833190e61
+    home: https://grafana.net
+    icon: https://raw.githubusercontent.com/grafana/grafana/master/public/img/logo_transparent_400x.png
+    kubeVersion: ^1.8.0-0
+    maintainers:
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    - email: rluckie@cisco.com
+      name: rtluckie
+    - email: maor.friedman@redhat.com
+      name: maorfr
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    - email: mail@torstenwalter.de
+      name: torstenwalter
+    name: grafana
+    sources:
+    - https://github.com/grafana/grafana
+    type: application
+    urls:
+    - https://charts.kubevela.net/addons/grafana-6.14.1.tgz
+    version: 6.14.1
+  kube-prometheus-stack:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: 0.50.0
+    created: "2021-09-30T17:29:43.237507+08:00"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 3.4.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 2.0.*
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.14.*
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: 7971fef2117b86022339f68d81029cd396f09d8083be1bef672064e084de5445
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: vsliouniaev
+    - name: bismarck
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    name: kube-prometheus-stack
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    type: application
+    urls:
+    - https://charts.kubevela.net/addons/kube-prometheus-stack-18.0.0.tgz
+    version: 18.0.0
+  kube-state-metrics:
+  - apiVersion: v2
+    appVersion: 2.1.0
+    created: "2021-09-30T17:29:43.239209+08:00"
+    description: Install kube-state-metrics to generate and expose cluster-level metrics
+    digest: 9856fdba31b7d34fce246e759494af80be45d9e21ed42a25afd3cd11ca05dd8d
+    home: https://github.com/kubernetes/kube-state-metrics/
+    keywords:
+    - metric
+    - monitoring
+    - prometheus
+    - kubernetes
+    maintainers:
+    - email: tariq.ibrahim@mulesoft.com
+      name: tariq1890
+    - email: manuel@rueg.eu
+      name: mrueg
+    name: kube-state-metrics
+    sources:
+    - https://github.com/kubernetes/kube-state-metrics/
+    type: application
+    urls:
+    - https://charts.kubevela.net/addons/kube-state-metrics-3.4.1.tgz
+    version: 3.4.1
+  loki-stack:
+  - apiVersion: v1
+    appVersion: v2.1.0
+    created: "2021-09-30T17:29:43.255079+08:00"
+    dependencies:
+    - condition: loki.enabled
+      name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: ^2.3.0
+    - condition: promtail.enabled
+      name: promtail
+      repository: https://grafana.github.io/helm-charts
+      version: ^2.2.0
+    - condition: fluent-bit.enabled
+      name: fluent-bit
+      repository: https://grafana.github.io/helm-charts
+      version: ^2.2.0
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: ~5.7.0
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ~11.16.0
+    - condition: filebeat.enabled
+      name: filebeat
+      repository: https://helm.elastic.co
+      version: ~7.8.0
+    - condition: logstash.enabled
+      name: logstash
+      repository: https://helm.elastic.co
+      version: ~7.8.0
+    description: 'Loki: like Prometheus, but for logs.'
+    digest: 0cc594f766e738cfafb6cae7cb7d5bde2c7707f3480bbdca975b47c09009636a
+    home: https://grafana.com/loki
+    icon: https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.png
+    kubeVersion: ^1.10.0-0
+    maintainers:
+    - email: lokiproject@googlegroups.com
+      name: Loki Maintainers
+    name: loki-stack
+    sources:
+    - https://github.com/grafana/loki
+    urls:
+    - https://charts.kubevela.net/addons/loki-stack-2.4.1.tgz
+    version: 2.4.1
+  prometheus:
+  - apiVersion: v2
+    appVersion: 2.26.0
+    created: "2021-09-30T17:29:43.26116+08:00"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 3.1.*
+    description: Prometheus is a monitoring system and time series database.
+    digest: f703bb3dcc2ab1208283809ae5bf461fbaaf2ec8b0a058bf35cb5ceac247b5bd
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    maintainers:
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    - email: monotek23@gmail.com
+      name: monotek
+    - email: naseem@transit.app
+      name: naseemkullah
+    name: prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/prometheus/node_exporter
+    - https://github.com/kubernetes/kube-state-metrics
+    type: application
+    urls:
+    - https://charts.kubevela.net/addons/prometheus-14.4.1.tgz
+    version: 14.4.1
+  terraform-controller:
+  - apiVersion: v1
+    created: "2021-09-30T17:29:43.264183+08:00"
+    description: A Kubernetes Terraform controller
+    digest: c7eb1ba7ed9e313cbfeab6bc69bae86a43108c925e9885d01b421b39a3184aa3
+    home: https://github.com/oam-dev/terraform-controller
+    name: terraform-controller
+    urls:
+    - https://charts.kubevela.net/addons/terraform-controller-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v1
+    created: "2021-09-30T17:29:43.26371+08:00"
+    description: A Kubernetes Terraform controller
+    digest: 34ead72413a6a25ff7153402502faa1cac427a90c3b23b148f0fb3ed7182b66b
+    home: https://github.com/oam-dev/terraform-controller
+    name: terraform-controller
+    urls:
+    - https://charts.kubevela.net/addons/terraform-controller-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    created: "2021-09-30T17:29:43.26288+08:00"
+    description: A Kubernetes Terraform controller
+    digest: e27829d9740e38a995b3bf0ccc93639eb9844e6da5407a595cf2c988439405d2
+    home: https://github.com/oam-dev/terraform-controller
+    name: terraform-controller
+    urls:
+    - https://charts.kubevela.net/addons/terraform-controller-0.1.19.tgz
+    version: 0.1.19
+  - apiVersion: v1
+    created: "2021-09-30T17:29:43.26204+08:00"
+    description: A Kubernetes Terraform controller
+    digest: abb7b0e60a2cca62543b3c88eb1658a2632d61c685985155568b7f755479ba77
+    home: https://github.com/oam-dev/terraform-controller
+    name: terraform-controller
+    urls:
+    - https://charts.kubevela.net/addons/terraform-controller-0.1.17.tgz
+    version: 0.1.17
+  terraform-controller-chart:
+  - apiVersion: v1
+    created: "2021-09-30T17:29:43.265028+08:00"
+    description: A Kubernetes Terraform controller
+    digest: 9ad2019f12afab9624f33747e893f1897c85ca70c8fbc34f0ee44d972da86b3a
+    home: https://github.com/oam-dev/terraform-controller
+    name: terraform-controller-chart
+    urls:
+    - https://charts.kubevela.net/addons/terraform-controller-chart-0.1.14.tgz
+    version: 0.1.14
+generated: "2021-09-30T17:29:43.204007+08:00"
