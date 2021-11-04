@@ -3,7 +3,7 @@ entries:
   grafana:
   - apiVersion: v2
     appVersion: 8.0.5
-    created: "2021-10-27T16:05:59.263138+08:00"
+    created: "2021-10-28T14:30:25.61643+08:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 3e6fed0682d3cc3690a6abc9e5a9f56c1ab703698b4d65b9441f75c833190e61
     home: https://grafana.net
@@ -30,7 +30,7 @@ entries:
   istio:
   - apiVersion: v2
     appVersion: 1.11.1
-    created: "2021-10-27T16:05:59.277799+08:00"
+    created: "2021-10-28T14:30:25.64113+08:00"
     dependencies:
     - name: base
       repository: file://./istio-charts/base
@@ -65,7 +65,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.50.0
-    created: "2021-10-27T16:05:59.300394+08:00"
+    created: "2021-10-28T14:30:25.674658+08:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -113,7 +113,7 @@ entries:
   kube-state-metrics:
   - apiVersion: v2
     appVersion: 2.1.0
-    created: "2021-10-27T16:05:59.301854+08:00"
+    created: "2021-10-28T14:30:25.676812+08:00"
     description: Install kube-state-metrics to generate and expose cluster-level metrics
     digest: 9856fdba31b7d34fce246e759494af80be45d9e21ed42a25afd3cd11ca05dd8d
     home: https://github.com/kubernetes/kube-state-metrics/
@@ -137,7 +137,7 @@ entries:
   loki-stack:
   - apiVersion: v1
     appVersion: v2.1.0
-    created: "2021-10-27T16:05:59.318812+08:00"
+    created: "2021-10-28T14:30:25.695829+08:00"
     dependencies:
     - condition: loki.enabled
       name: loki
@@ -184,7 +184,7 @@ entries:
   prometheus:
   - apiVersion: v2
     appVersion: 2.26.0
-    created: "2021-10-27T16:05:59.325362+08:00"
+    created: "2021-10-28T14:30:25.705055+08:00"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -218,7 +218,7 @@ entries:
     version: 14.4.1
   provider-alibaba:
   - apiVersion: v1
-    created: "2021-10-27T16:05:59.32698+08:00"
+    created: "2021-10-28T14:30:25.70722+08:00"
     description: Crossplane provider for Alibaba Cloud
     digest: 633d6b201e99cacbdbb7c5f725540e70ab93084cddf33d5e140327cfbfd57b33
     home: https://github.com/crossplane/provider-alibaba
@@ -229,7 +229,17 @@ entries:
   terraform-controller:
   - apiVersion: v1
     appVersion: 0.2.5
-    created: "2021-10-27T16:05:59.335093+08:00"
+    created: "2021-10-28T14:30:25.721701+08:00"
+    description: A Kubernetes Terraform controller
+    digest: e24ac0fe2a700a6ee4558b19e1fb3fe23118e340b647792c056e127c0b9c6f4f
+    home: https://github.com/oam-dev/terraform-controller
+    name: terraform-controller
+    urls:
+    - https://charts.kubevela.net/addons/terraform-controller-0.2.7.tgz
+    version: 0.2.7
+  - apiVersion: v1
+    appVersion: 0.2.5
+    created: "2021-10-28T14:30:25.720837+08:00"
     description: A Kubernetes Terraform controller
     digest: d26d71032b5e557c897dc3abf589c4c8747d24d07b0d3da98ab9dae0b7719284
     home: https://github.com/oam-dev/terraform-controller
@@ -239,7 +249,7 @@ entries:
     version: 0.2.6
   - apiVersion: v1
     appVersion: 0.2.4
-    created: "2021-10-27T16:05:59.334323+08:00"
+    created: "2021-10-28T14:30:25.719425+08:00"
     description: A Kubernetes Terraform controller
     digest: c325dccad6fad046fb1e0cdb35e3943c04f54d41dbf3f59170945913f6d7b453
     home: https://github.com/oam-dev/terraform-controller
@@ -249,7 +259,7 @@ entries:
     version: 0.2.5
   - apiVersion: v1
     appVersion: 0.2.3
-    created: "2021-10-27T16:05:59.333561+08:00"
+    created: "2021-10-28T14:30:25.718168+08:00"
     description: A Kubernetes Terraform controller
     digest: 37b96b6674c4cebb650286ec623ded66a47511dffb415e553f789dc22b2c1585
     home: https://github.com/oam-dev/terraform-controller
@@ -258,7 +268,7 @@ entries:
     - https://charts.kubevela.net/addons/terraform-controller-0.2.4.tgz
     version: 0.2.4
   - apiVersion: v1
-    created: "2021-10-27T16:05:59.332782+08:00"
+    created: "2021-10-28T14:30:25.716761+08:00"
     description: A Kubernetes Terraform controller
     digest: 5a7eeb5289cdf698b43d55587dba592ede90b239205c405c8fa9f3826d3a1aa4
     home: https://github.com/oam-dev/terraform-controller
@@ -267,7 +277,7 @@ entries:
     - https://charts.kubevela.net/addons/terraform-controller-0.2.3.tgz
     version: 0.2.3
   - apiVersion: v1
-    created: "2021-10-27T16:05:59.331931+08:00"
+    created: "2021-10-28T14:30:25.715491+08:00"
     description: A Kubernetes Terraform controller
     digest: 3180bc9eedbf5b7e3b99f50b6505a7f0d96eeb57d0e68c8f25d7bdd269e70542
     home: https://github.com/oam-dev/terraform-controller
@@ -276,7 +286,7 @@ entries:
     - https://charts.kubevela.net/addons/terraform-controller-0.2.2.tgz
     version: 0.2.2
   - apiVersion: v1
-    created: "2021-10-27T16:05:59.33114+08:00"
+    created: "2021-10-28T14:30:25.712948+08:00"
     description: A Kubernetes Terraform controller
     digest: aed3045b8c193e3cea28358befa5b43b04ee70b87d70d4f5d077f47f6977e306
     home: https://github.com/oam-dev/terraform-controller
@@ -285,7 +295,7 @@ entries:
     - https://charts.kubevela.net/addons/terraform-controller-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v1
-    created: "2021-10-27T16:05:59.329623+08:00"
+    created: "2021-10-28T14:30:25.711897+08:00"
     description: A Kubernetes Terraform controller
     digest: 34ead72413a6a25ff7153402502faa1cac427a90c3b23b148f0fb3ed7182b66b
     home: https://github.com/oam-dev/terraform-controller
@@ -294,7 +304,7 @@ entries:
     - https://charts.kubevela.net/addons/terraform-controller-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
-    created: "2021-10-27T16:05:59.328725+08:00"
+    created: "2021-10-28T14:30:25.710385+08:00"
     description: A Kubernetes Terraform controller
     digest: e27829d9740e38a995b3bf0ccc93639eb9844e6da5407a595cf2c988439405d2
     home: https://github.com/oam-dev/terraform-controller
@@ -303,7 +313,7 @@ entries:
     - https://charts.kubevela.net/addons/terraform-controller-0.1.19.tgz
     version: 0.1.19
   - apiVersion: v1
-    created: "2021-10-27T16:05:59.327881+08:00"
+    created: "2021-10-28T14:30:25.708762+08:00"
     description: A Kubernetes Terraform controller
     digest: abb7b0e60a2cca62543b3c88eb1658a2632d61c685985155568b7f755479ba77
     home: https://github.com/oam-dev/terraform-controller
@@ -311,4 +321,4 @@ entries:
     urls:
     - https://charts.kubevela.net/addons/terraform-controller-0.1.17.tgz
     version: 0.1.17
-generated: "2021-10-27T16:05:59.256314+08:00"
+generated: "2021-10-28T14:30:25.607976+08:00"
